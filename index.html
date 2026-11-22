@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mother Dental Hospital — Thrikkakara, Kochi | 4.9★ Rated Dental Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0b5d47;
+      --primary-dark: #074232;
+      --primary-light: #e8f3ef;
+      --accent: #f59e0b;
+      --text: #111827;
+      --muted: #4b5563;
+      --bg: #ffffff;
+      --surface: #f6f9f8;
+      --border: #e5e7eb;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Bar */
+    .topbar {
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 8px 0;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .topbar a { color: #a7f3d0; text-decoration: none; font-weight: 600; }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 74px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .brand-text strong { display: block; font-size: 1.05rem; line-height: 1.2; color: var(--primary); }
+    .brand-text span { font-size: 0.75rem; color: var(--muted); font-weight: 600; letter-spacing: 0.4px; }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s, background 0.2s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline {
+      background: #fff;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary-light); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #f2f8f6 0%, #ffffff 65%);
+      padding: 56px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .stars { color: var(--accent); letter-spacing: 1px; }
+    .hero h1 {
+      font-size: clamp(2rem, 3.6vw, 2.9rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .ml-tagline {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 26px;
+      max-width: 560px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Booking Card */
+    .booking-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 16px 36px rgba(11, 93, 71, 0.08);
+    }
+    .booking-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+    .booking-card .sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      font-family: inherit;
+      font-size: 0.94rem;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: 2px solid var(--primary);
+      border-color: transparent;
+    }
+
+    /* Stats */
+    .stats {
+      padding: 28px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .stat-item strong {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .stat-item span { font-size: 0.88rem; color: var(--muted); font-weight: 600; }
+
+    /* Sections */
+    section { padding: 68px 0; }
+    .section-alt { background: var(--surface); }
+    .section-head {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 42px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-head h2 {
+      font-size: clamp(1.65rem, 2.8vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .section-head p { color: var(--muted); }
+
+    /* Services */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+    .card-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 18px; }
+    .card-link {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .card-link:hover { text-decoration: underline; }
+
+    /* Doctors */
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .doc-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+    }
+    .doc-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+    }
+    .doc-card h4 { font-size: 1rem; margin-bottom: 4px; }
+    .doc-qual { font-size: 0.8rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .doc-role { font-size: 0.82rem; color: var(--muted); }
+
+    /* Reviews */
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .review-card p { font-size: 0.93rem; color: #374151; }
+
+    /* FAQ & Location */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+    details {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    summary {
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details p {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .location-box {
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .location-box h3 { font-size: 1.35rem; margin-bottom: 12px; }
+    .location-box p { color: #d1fae5; font-size: 0.95rem; margin-bottom: 14px; }
+    .location-box .btn { background: #fff; color: var(--primary); width: 100%; margin-top: 8px; }
+
+    footer {
+      background: #0b1915;
+      color: #9ca3af;
+      padding: 36px 0;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .doctors-grid, .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .cards-grid, .doctors-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>Triumph Towers, Seaport–Airport Rd, Thrikkakara, Kochi • Open till 8:00 PM</span>
+      <span>24/7 Dental Emergency: <a href="tel:+919747643000">+91 97476 43000</a></span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-icon">M</div>
+        <div class="brand-text">
+          <strong>MOTHER DENTAL</strong>
+          <span>THRIKKAKARA • KOCHI</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#specialists">Specialists</a></li>
+        <li><a href="#reviews">Patient Reviews</a></li>
+        <li><a href="#visit">Location & FAQ</a></li>
+      </ul>
+      <a href="#book" class="btn btn-primary">Book Appointment</a>
+    </div>
+  </header>
+
+  <section class="hero" id="book">
+    <div class="container hero-grid">
+      <div>
+        <div class="rating-pill">
+          <span class="stars">★★★★★</span>
+          <span>4.9 / 5.0 (1,310+ Google Reviews in Kochi)</span>
+        </div>
+        <div class="ml-tagline">കമ്പി ഇടാതെ പല്ല് നേരെയാക്കാം • Invisible Aligners & Multi-Specialty Care</div>
+        <h1>Advanced, Pain-Free Dental Care in Thrikkakara, Kochi.</h1>
+        <p>
+          From clear aligners and painless root canals to full-mouth dental implants and pediatric care—experience specialist dentistry right on Seaport–Airport Road, near Naipunnya Public School.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:+919747643000" class="btn btn-primary">Call +91 97476 43000</a>
+          <a href="#visit" class="btn btn-outline">Get Clinic Directions</a>
+        </div>
+      </div>
+
+      <div class="booking-card">
+        <h3>Instant WhatsApp Slot Request</h3>
+        <p class="sub">Select your treatment and preferred time—our Thrikkakara desk confirms in minutes.</p>
+        <form id="waForm">
+          <div class="form-group">
+            <label for="patientName">Patient Name</label>
+            <input type="text" id="patientName" placeholder="Enter your name" required />
+          </div>
+          <div class="form-group">
+            <label for="treatmentSelect">Treatment Needed</label>
+            <select id="treatmentSelect">
+              <option value="Routine Dental Check-up & Cleaning">Routine Check-up & Cleaning</option>
+              <option value="Invisible Aligners / Braces Consultation">Invisible Aligners / Braces</option>
+              <option value="Dental Implants / Crown Restoration">Dental Implants / Fixed Restoration</option>
+              <option value="Painless Root Canal Treatment">Painless Root Canal (RCT)</option>
+              <option value="Pediatric (Kids) Dental Care">Pediatric (Kids) Dental Care</option>
+              <option value="Teeth Whitening / Smile Design">Teeth Whitening / Cosmetic Smile Design</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="timeSlot">Preferred Time</label>
+            <select id="timeSlot">
+              <option value="Morning (9:30 AM – 1:00 PM)">Morning (9:30 AM – 1:00 PM)</option>
+              <option value="Afternoon (2:00 PM – 5:00 PM)">Afternoon (2:00 PM – 5:00 PM)</option>
+              <option value="Evening (5:00 PM – 8:00 PM)">Evening (5:00 PM – 8:00 PM)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Booking via WhatsApp →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="container stats-grid">
+      <div class="stat-item"><strong>20,000+</strong><span>Satisfied Patients</span></div>
+      <div class="stat-item"><strong>100+</strong><span>Specialist Doctors</span></div>
+      <div class="stat-item"><strong>10,000+</strong><span>Implants Placed</span></div>
+      <div class="stat-item"><strong>13+</strong><span>Branches (India & UAE)</span></div>
+    </div>
+  </div>
+
+  <section id="treatments">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Comprehensive Treatments</span>
+        <h2>Specialized Dental Care Under One Roof</h2>
+        <p>Clear treatment plans, transparent pricing, and modern digital diagnostics tailored for children and adults.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div>
+            <div class="card-badge">✨</div>
+            <h3>Invisible Aligners</h3>
+            <p>Straighten crowded or gapped teeth discreetly using custom clear, removable aligners—no metal brackets required.</p>
+          </div>
+          <a href="#book" class="card-link" onclick="selectTreatment('Invisible Aligners / Braces Consultation')">Book Aligner Scan →</a>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-badge">🦷</div>
+            <h3>Implants & Fixed Restorations</h3>
+            <p>Permanent, natural-looking zirconia crowns, bridges, and titanium dental implants engineered to restore full chewing strength.</p>
+          </div>
+          <a href="#book" class="card-link" onclick="selectTreatment('Dental Implants / Crown Restoration')">Consult Implantologist →</a>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-badge">🛡️</div>
+            <h3>Painless Root Canal & Endodontics</h3>
+            <p>Single-sitting microscopic root canal therapy to save infected teeth comfortably without prolonged recovery.</p>
+          </div>
+          <a href="#book" class="card-link" onclick="selectTreatment('Painless Root Canal Treatment')">Book RCT Consultation →</a>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-badge">🧸</div>
+            <h3>Pediatric Dentistry</h3>
+            <p>Gentle check-ups, fluoride protection, and cavity care designed specifically to keep children relaxed and confident.</p>
+          </div>
+          <a href="#book" class="card-link" onclick="selectTreatment('Pediatric (Kids) Dental Care')">Book Kids Visit →</a>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-badge">🌿</div>
+            <h3>Periodontic Gum Care</h3>
+            <p>Laser gum therapy and deep ultrasonic scaling to treat bleeding gums and build a healthy foundation for your smile.</p>
+          </div>
+          <a href="#book" class="card-link" onclick="selectTreatment('Routine Dental Check-up & Cleaning')">Schedule Gum Check →</a>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-badge">💎</div>
+            <h3>Cosmetic Smile Design</h3>
+            <p>Digital Smile Design, porcelain veneers, and enamel-safe laser whitening for a bright, balanced smile.</p>
+          </div>
+          <a href="#book" class="card-link" onclick="selectTreatment('Teeth Whitening / Smile Design')">Explore Smile Design →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="specialists">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Kochi Clinical Team</span>
+        <h2>Meet Our Resident Specialists</h2>
+        <p>Every procedure is handled by dedicated MDS specialists and experienced resident dental surgeons.</p>
+      </div>
+      <div class="doctors-grid">
+        <div class="doc-card">
+          <div class="doc-avatar">DC</div>
+          <h4>Dr. Divya Chandrasekaran</h4>
+          <div class="doc-qual">BDS, MDS</div>
+          <div class="doc-role">Resident Orthodontist</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-avatar">SL</div>
+          <h4>Dr. Silna</h4>
+          <div class="doc-qual">BDS, MDS</div>
+          <div class="doc-role">Resident Endodontist</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-avatar">SR</div>
+          <h4>Dr. Sreelakshmi</h4>
+          <div class="doc-qual">BDS, MDS</div>
+          <div class="doc-role">Resident Periodontist</div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-avatar">GN</div>
+          <h4>Dr. Ganesh</h4>
+          <div class="doc-qual">BDS, MDS</div>
+          <div class="doc-role">Resident Endodontist</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">4.9★ Across 1,310+ Google Reviews</span>
+        <h2>What Our Kochi Patients Say</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="review-card">
+          <div class="review-top">
+            <strong>Aubin Joe</strong>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>"I've always dreaded the dentist, but Mother Dental Thrikkakara completely changed that. The doctors are patient, answer every question clearly, and genuinely care about your comfort."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <strong>Zuba Susha</strong>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>"The clinic is clean, well-organized, and very professional. The staff are friendly and helpful, making patients feel comfortable throughout the entire visit."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <strong>Jyothika Jyothish</strong>
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>"Excellent dental clinic with friendly and professional staff. Well-maintained hygiene standards and great care—highly recommended for anyone in Kochi looking for quality dental services."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="visit">
+    <div class="container split-grid">
+      <div>
+        <span class="eyebrow">Common Questions</span>
+        <h2 style="margin-bottom: 18px;">Frequently Asked Questions</h2>
+        <details open>
+          <summary>Are dental implants a good long-term option for missing teeth? <span>+</span></summary>
+          <p>Yes. Titanium dental implants fuse directly with the jawbone, preventing bone loss and functioning just like natural teeth for decades with regular hygiene.</p>
+        </details>
+        <details>
+          <summary>How long does invisible aligner treatment take? <span>+</span></summary>
+          <p>Mild alignment cases take 4 to 8 months, while more complex corrections typically take 9 to 15 months. You can preview your 3D digital outcome before starting.</p>
+        </details>
+        <details>
+          <summary>Do you handle urgent toothaches or dental emergencies? <span>+</span></summary>
+          <p>Yes—call +91 97476 43000 for priority same-day emergency relief for acute tooth pain, swelling, or broken restorations.</p>
+        </details>
+      </div>
+
+      <div class="location-box">
+        <h3>Visit Mother Dental Center — Thrikkakara</h3>
+        <p><strong>Address:</strong> Triumph Towers, Seaport–Airport Rd, near Naipunnya Public School, Judgemukku, Thrikkakara, Ernakulam, Kerala 682021</p>
+        <p><strong>Hours:</strong> Monday – Sunday, 9:30 AM – 8:00 PM</p>
+        <p><strong>Phone / WhatsApp:</strong> +91 97476 43000</p>
+        <a href="https://maps.google.com/?q=Mother+Dental+Center+Thrikkakara+Kochi" target="_blank" rel="noopener" class="btn">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      Mother Dental Hospital — Thrikkakara & Edappally, Kochi • Concept Redesign Preview
+    </div>
+  </footer>
+
+  <script>
+    function selectTreatment(treatmentName) {
+      const select = document.getElementById('treatmentSelect');
+      select.value = treatmentName;
+    }
+
+    document.getElementById('waForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('patientName').value.trim();
+      const treatment = document.getElementById('treatmentSelect').value;
+      const slot = document.getElementById('timeSlot').value;
+
+      const message = `Hi Mother Dental Thrikkakara, I would like to book an appointment.\n• Name: ${name}\n• Treatment: ${treatment}\n• Preferred Time: ${slot}`;
+      const waUrl = `https://wa.me/919747643000?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>

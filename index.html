@@ -1,1569 +1,726 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mother Dental Hospital — Kochi Flagship | Multi-Specialty & Aesthetic Dentistry</title>
+  <title>Mother Dental Hospital — Kochi Flagship | Luxury Aesthetic & Multi-Specialty Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+Malayalam:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+Malayalam:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --emerald-950: #04261d;
-      --emerald-900: #073b2d;
-      --emerald-800: #0b5340;
-      --emerald-600: #0f765a;
-      --emerald-500: #149672;
-      --emerald-100: #e3f5ef;
-      --emerald-50: #f3faf7;
-      --gold: #d99b26;
-      --ink: #0b1512;
-      --slate: #4a5a54;
-      --muted: #6e7f79;
-      --surface: #ffffff;
-      --bg: #f8fbf9;
-      --glass: rgba(255, 255, 255, 0.74);
-      --glass-border: rgba(255, 255, 255, 0.65);
-      --line: rgba(11, 83, 64, 0.11);
-      --shadow-sm: 0 8px 24px rgba(4, 38, 29, 0.05);
-      --shadow-lg: 0 24px 60px rgba(4, 38, 29, 0.10);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f6faf8; color: #071914; overflow-x: hidden; }
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .ml-font { font-family: 'Noto Sans Malayalam', 'Plus Jakarta Sans', sans-serif; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+    /* Liquid Glass Surfaces */
+    .glass-nav {
+      background: rgba(6, 36, 28, 0.72);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
     }
-
-    .serif {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Subtle Announcement Strip */
-    .utility-bar {
-      background: var(--emerald-950);
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 0.8rem;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .utility-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .utility-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #34d399;
-      box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.2);
-    }
-    .utility-bar a {
-      color: #6ee7b7;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* Floating Liquid Glass Navbar */
-    .header-wrap {
-      position: sticky;
-      top: 12px;
-      z-index: 100;
-      padding: 0 16px;
-      margin-top: 12px;
-    }
-    .navbar {
-      max-width: 1220px;
-      margin: 0 auto;
-      height: 72px;
-      padding: 0 22px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 12px 34px rgba(4, 38, 29, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--ink);
-    }
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--emerald-800), var(--emerald-600));
-      display: grid;
-      place-items: center;
-      color: #fff;
-      box-shadow: 0 6px 16px rgba(15, 118, 90, 0.28);
-    }
-    .brand-copy strong {
-      display: block;
-      font-size: 0.98rem;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      color: var(--emerald-950);
-    }
-    .brand-copy span {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--emerald-600);
-    }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--slate);
-      font-size: 0.88rem;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover { color: var(--emerald-800); }
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--emerald-900), var(--emerald-600));
-      color: #fff;
-      box-shadow: 0 10px 24px rgba(11, 83, 64, 0.24);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 32px rgba(11, 83, 64, 0.32);
-    }
-    .btn-glass {
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--emerald-900);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-    .btn-glass:hover {
-      background: #fff;
-      border-color: var(--emerald-600);
-      transform: translateY(-1px);
-    }
-
-    /* Hero with Interactive Topographic Canvas */
-    .hero {
-      position: relative;
-      padding: 64px 0 88px;
-      overflow: hidden;
-    }
-    #topoCanvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.75;
-    }
-    .hero-glow {
-      position: absolute;
-      width: 580px;
-      height: 580px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(20, 150, 114, 0.14) 0%, rgba(20, 150, 114, 0) 70%);
-      top: -120px;
-      right: -80px;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .trust-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 15px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      font-size: 0.82rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .stars-svg {
-      color: var(--gold);
-      display: inline-flex;
-      gap: 2px;
-    }
-    .ml-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Noto Sans Malayalam', 'Plus Jakarta Sans', sans-serif;
-      background: var(--emerald-100);
-      color: var(--emerald-900);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 4.6vw, 4.1rem);
-      line-height: 1.06;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--emerald-950);
-      margin-bottom: 20px;
-    }
-    .hero h1 .serif {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--emerald-600);
-      font-size: 1.08em;
-    }
-    .hero-lead {
-      font-size: 1.06rem;
-      color: var(--slate);
-      max-width: 560px;
-      margin-bottom: 30px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 36px;
-    }
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-    }
-    .mini-stat strong {
-      display: block;
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: var(--emerald-900);
-      letter-spacing: -0.02em;
-    }
-    .mini-stat span {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    /* Glassmorphic Concierge Card */
-    .concierge-card {
-      background: rgba(255, 255, 255, 0.82);
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.10);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.92);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: var(--shadow-lg);
-      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
     }
-    .concierge-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .concierge-header h3 {
-      font-size: 1.28rem;
-      letter-spacing: -0.02em;
-      color: var(--emerald-950);
-    }
-    .concierge-header p {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-    .live-tag {
-      background: #ecfdf5;
-      color: #047857;
-      border: 1px solid #a7f3d0;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .field { margin-bottom: 14px; }
-    .field label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--emerald-950);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .field input, .field select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(11, 83, 64, 0.16);
-      background: rgba(255, 255, 255, 0.92);
-      font-family: inherit;
-      font-size: 0.93rem;
-      color: var(--ink);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .field input:focus, .field select:focus {
-      outline: none;
-      border-color: var(--emerald-600);
-      box-shadow: 0 0 0 4px rgba(20, 150, 114, 0.12);
-    }
-    .branch-pills {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .branch-pill {
-      padding: 10px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(11, 83, 64, 0.16);
-      background: #fff;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: var(--slate);
-      cursor: pointer;
-      text-align: center;
-      transition: all 0.18s;
-    }
-    .branch-pill.active {
-      background: var(--emerald-900);
-      color: #fff;
-      border-color: var(--emerald-900);
-    }
-    .concierge-note {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 12px;
+    .hero-mesh {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(16, 185, 129, 0.24) 0%, transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(217, 155, 38, 0.16) 0%, transparent 40%),
+        linear-gradient(145deg, #031711 0%, #062c21 55%, #041f17 100%);
     }
 
-    /* Authority Metrics Ribbon */
-    .metrics-band {
-      background: var(--emerald-950);
-      color: #fff;
-      padding: 40px 0;
+    /* Before/After Smile Slider */
+    .stain-filter {
+      filter: sepia(0.42) saturate(1.38) brightness(0.93) contrast(0.98);
     }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-    .metric-box strong {
-      display: block;
-      font-size: clamp(1.6rem, 2.5vw, 2.25rem);
-      font-weight: 800;
-      color: #6ee7b7;
-      letter-spacing: -0.02em;
-    }
-    .metric-box span {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.76);
-      font-weight: 500;
+    .pearl-filter {
+      filter: brightness(1.08) contrast(1.06) saturate(0.96);
     }
 
-    /* Section Scaffolding */
-    section { padding: 92px 0; }
-    .section-soft { background: var(--emerald-50); }
-    .section-header {
-      max-width: 680px;
-      margin: 0 auto 52px;
-      text-align: center;
+    /* Infinite Smooth Review Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--emerald-600);
-      background: var(--emerald-100);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    .section-header h2 {
-      font-size: clamp(2rem, 3.4vw, 2.85rem);
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-      color: var(--emerald-950);
-      margin-bottom: 14px;
-    }
-    .section-header p {
-      color: var(--slate);
-      font-size: 1rem;
-    }
-
-    /* Signature Treatment Packages */
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
-    .pkg-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
+    .marquee-track {
       display: flex;
-      flex-direction: column;
-      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      width: max-content;
+      animation: marquee 34s linear infinite;
     }
-    .pkg-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-    .pkg-card.featured {
-      border: 2px solid var(--emerald-600);
-      position: relative;
-    }
-    .pkg-visual {
-      height: 210px;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--emerald-900), var(--emerald-600));
-    }
-    .pkg-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .pkg-card:hover .pkg-visual img { transform: scale(1.05); }
-    .pkg-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(4, 38, 29, 0.78);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-    .pkg-body {
-      padding: 28px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .pkg-body h3 {
-      font-size: 1.32rem;
-      margin-bottom: 14px;
-      color: var(--emerald-950);
-    }
-    .check-list {
-      list-style: none;
-      margin-bottom: 24px;
-    }
-    .check-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--slate);
-      margin-bottom: 10px;
-    }
-    .check-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--emerald-100);
-      color: var(--emerald-800);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      font-size: 0.75rem;
-      font-weight: 800;
-    }
-
-    /* Interactive Clinical Specialties Filter */
-    .filter-tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 36px;
-    }
-    .tab-btn {
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--slate);
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--emerald-900);
-      color: #fff;
-      border-color: var(--emerald-900);
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-    .srv-card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      transition: all 0.24s ease;
-    }
-    .srv-card:hover {
-      background: #fff;
-      border-color: var(--emerald-600);
-      box-shadow: var(--shadow-sm);
-      transform: translateY(-3px);
-    }
-    .srv-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: var(--emerald-100);
-      color: var(--emerald-800);
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-    }
-    .srv-card h3 {
-      font-size: 1.14rem;
-      margin-bottom: 8px;
-      color: var(--emerald-950);
-    }
-    .srv-card p {
-      font-size: 0.9rem;
-      color: var(--slate);
-      margin-bottom: 18px;
-    }
-    .srv-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: var(--emerald-800);
-      text-decoration: none;
-    }
-
-    /* Specialist Roster */
-    .doctors-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-    .doc-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      box-shadow: var(--shadow-sm);
-    }
-    .doc-monogram {
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--emerald-900), var(--emerald-600));
-      color: #fff;
-      font-weight: 800;
-      font-size: 1.1rem;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-    }
-    .doc-meta h4 {
-      font-size: 1.02rem;
-      color: var(--emerald-950);
-      margin-bottom: 2px;
-    }
-    .doc-degree {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--emerald-600);
-      background: var(--emerald-50);
-      padding: 2px 8px;
-      border-radius: 6px;
-      margin-bottom: 4px;
-    }
-    .doc-role {
-      display: block;
-      font-size: 0.83rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* Heritage & Guarantee Split */
-    .heritage-card {
-      background: linear-gradient(135deg, var(--emerald-950) 0%, var(--emerald-900) 100%);
-      color: #fff;
-      border-radius: var(--radius-lg);
-      padding: 52px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 44px;
-      align-items: center;
-      box-shadow: var(--shadow-lg);
-    }
-    .heritage-card h2 {
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .heritage-card p {
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 0.96rem;
-      margin-bottom: 16px;
-    }
-    .guarantee-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(14px);
-      border-radius: var(--radius-md);
-      padding: 30px;
-    }
-    .guarantee-box h3 {
-      font-size: 1.15rem;
-      color: #6ee7b7;
-      margin-bottom: 16px;
-      letter-spacing: 0.02em;
-    }
-    .guarantee-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    .g-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    /* Verified Patient Reviews */
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-    .rev-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .rev-quote {
-      font-size: 0.93rem;
-      color: var(--slate);
-      margin: 14px 0 20px;
-      line-height: 1.65;
-    }
-    .rev-author {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--line);
-      padding-top: 14px;
-    }
-    .rev-author strong { font-size: 0.92rem; color: var(--emerald-950); }
-    .g-badge {
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    /* FAQ + Location Visit */
-    .visit-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 36px;
-      align-items: start;
-    }
-    .faq-item {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-    .faq-q {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 18px 22px;
-      text-align: left;
-      font-family: inherit;
-      font-size: 0.96rem;
-      font-weight: 700;
-      color: var(--emerald-950);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.28s ease;
-      padding: 0 22px;
-      color: var(--slate);
-      font-size: 0.9rem;
-    }
-    .faq-item.open .faq-a {
-      max-height: 220px;
-      padding-bottom: 18px;
-    }
-    .faq-item.open .faq-plus { transform: rotate(45deg); }
-    .faq-plus {
-      font-size: 1.25rem;
-      color: var(--emerald-600);
-      transition: transform 0.2s;
-    }
-
-    .clinic-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 34px;
-      box-shadow: var(--shadow-lg);
-    }
-    .clinic-card h3 {
-      font-size: 1.35rem;
-      color: var(--emerald-950);
-      margin-bottom: 8px;
-    }
-    .clinic-detail {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 0.92rem;
-      color: var(--slate);
-    }
-    .clinic-detail strong {
-      display: block;
-      color: var(--emerald-950);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 3px;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--emerald-950);
-      color: rgba(255, 255, 255, 0.72);
-      padding: 64px 0 36px;
-      font-size: 0.88rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 32px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .footer-col h4 {
-      color: #fff;
-      font-size: 0.92rem;
-      margin-bottom: 14px;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 8px; }
-    .footer-col a {
-      color: rgba(255, 255, 255, 0.72);
-      text-decoration: none;
-    }
-    .footer-col a:hover { color: #6ee7b7; }
-    .footer-bottom {
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-    }
-
-    /* Floating Quick-Action Dock */
-    .floating-dock {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      z-index: 90;
-      display: flex;
-      gap: 10px;
-      padding: 8px;
-      border-radius: 999px;
-      background: rgba(4, 38, 29, 0.86);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
-    }
-    .dock-btn {
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .dock-wa { background: #10b981; color: #04261d; }
-    .dock-call { background: rgba(255, 255, 255, 0.12); color: #fff; }
+    .marquee-track:hover { animation-play-state: paused; }
 
     /* Scroll Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid, .heritage-card, .visit-grid { grid-template-columns: 1fr; }
-      .packages-grid, .services-grid, .doctors-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { display: none; }
-    }
-    @media (max-width: 620px) {
-      .packages-grid, .services-grid, .doctors-grid, .reviews-grid, .metrics-grid, .footer-grid { grid-template-columns: 1fr; }
-      .hero-highlights { grid-template-columns: 1fr; gap: 12px; }
-      .heritage-card { padding: 32px 24px; }
-      .concierge-card { padding: 24px 20px; }
-    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body>
+<body class="antialiased selection:bg-emerald-500 selection:text-white">
 
-  <div class="utility-bar">
-    <div class="container utility-inner">
-      <div class="utility-pill">
-        <span class="pulse-dot"></span>
-        <span>Thrikkakara &amp; Edappally Centres Open Today • Until 8:00 PM</span>
+  <!-- Top Live Status Bar -->
+  <div class="bg-[#02120d] text-emerald-100/80 text-xs py-2.5 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Thrikkakara &amp; Edappally Centres Open Today • 9:30 AM – 8:00 PM</span>
       </div>
-      <div>
-        24/7 Emergency Dental Desk: <a href="tel:+919747643000">+91 97476 43000</a> &nbsp;|&nbsp; <a href="mailto:info@motherdentalhospital.in">info@motherdentalhospital.in</a>
+      <div class="flex items-center gap-4">
+        <a href="tel:+919747643000" class="hover:text-emerald-300 font-semibold">24/7 Emergency: +91 97476 43000</a>
+        <span class="hidden sm:inline opacity-40">|</span>
+        <a href="mailto:info@motherdentalhospital.in" class="hidden sm:inline hover:text-emerald-300">info@motherdentalhospital.in</a>
       </div>
     </div>
   </div>
 
-  <div class="header-wrap">
-    <nav class="navbar">
-      <a href="#" class="brand">
-        <div class="brand-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3c-3.2 0-6 2.2-6 5.6 0 2.4 1.1 4.2 1.6 6.8.4 2.1.9 5.6 2.4 5.6 1.1 0 1.3-2.8 2-2.8s.9 2.8 2 2.8c1.5 0 2-3.5 2.4-5.6.5-2.6 1.6-4.4 1.6-6.8C18 5.2 15.2 3 12 3z"/>
-          </svg>
+  <!-- Floating Liquid Glass Navbar -->
+  <header class="sticky top-3 z-50 px-4 mt-3">
+    <nav class="glass-nav max-w-7xl mx-auto rounded-full px-5 h-16 flex items-center justify-between shadow-2xl">
+      <a href="#" class="flex items-center gap-3 text-white">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-500/30 font-extrabold text-lg">
+          M
         </div>
-        <div class="brand-copy">
-          <strong>MOTHER DENTAL</strong>
-          <span>India • UAE Flagship</span>
+        <div class="leading-tight">
+          <span class="block font-extrabold tracking-tight text-sm sm:text-base">MOTHER DENTAL</span>
+          <span class="block text-[10px] uppercase tracking-widest text-emerald-300 font-semibold">India • UAE Flagship</span>
         </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#specialties">Specialties</a></li>
-        <li><a href="#doctors">Specialists</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#visit">Locations</a></li>
-      </ul>
-
-      <div class="nav-cta">
-        <a href="#concierge" class="btn btn-primary">Book Consultation</a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-white/85">
+        <a href="#results" class="hover:text-emerald-300 transition">Smile Preview</a>
+        <a href="#packages" class="hover:text-emerald-300 transition">Packages</a>
+        <a href="#specialties" class="hover:text-emerald-300 transition">Specialties</a>
+        <a href="#doctors" class="hover:text-emerald-300 transition">Doctors</a>
+        <a href="#reviews" class="hover:text-emerald-300 transition">Reviews</a>
       </div>
+
+      <a href="#concierge" class="bg-gradient-to-r from-emerald-400 to-teal-500 text-[#032018] font-extrabold text-xs sm:text-sm px-5 py-2.5 rounded-full hover:scale-105 transition shadow-lg shadow-emerald-500/25">
+        Book Priority Slot
+      </a>
     </nav>
-  </div>
+  </header>
 
-  <section class="hero" id="concierge">
-    <canvas id="topoCanvas"></canvas>
-    <div class="hero-glow"></div>
-    <div class="container hero-grid">
-      <div>
-        <div class="trust-chip">
-          <span class="stars-svg">★★★★★</span>
-          <span>4.9 Rating • 1,310+ Verified Google Reviews in Kochi</span>
+  <!-- Luxury Dark-Emerald Hero with Cursor Contour Canvas -->
+  <section id="concierge" class="hero-mesh relative -mt-20 pt-32 pb-20 lg:pb-28 overflow-hidden text-white">
+    <canvas id="contourCanvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-60"></canvas>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Editorial Pitch -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs font-semibold mb-4">
+          <span class="text-amber-400 tracking-wider">★★★★★</span>
+          <span>4.9 Google Rating • 1,310+ Verified Kochi Reviews</span>
         </div>
-        <br />
-        <div class="ml-badge">
-          കമ്പി ഇടാതെ പല്ല് നേരെയാക്കാം • Clear Aligners &amp; Digital Dentistry
+
+        <div class="block mb-5">
+          <span class="ml-font inline-flex items-center gap-2 bg-emerald-400/15 border border-emerald-400/30 text-emerald-200 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full">
+            കമ്പി ഇടാതെ പല്ല് നേരെയാക്കാം • Clear Aligners &amp; Digital Smile Design
+          </span>
         </div>
-        <h1>
-          Precision Dentistry for <span class="serif">Natural, Confident</span> Smiles in Kochi.
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.06] mb-6">
+          World-Class Dentistry for <span class="serif italic font-normal text-emerald-300 text-5xl sm:text-7xl">Unforgettable</span> Smiles.
         </h1>
-        <p class="hero-lead">
-          Multi-specialty dental care across Thrikkakara and Edappally—combining 3D digital smile scanning, painless microscopic root canals, titanium implants, and specialist orthodontics under one roof.
+
+        <p class="text-emerald-50/80 text-base sm:text-lg max-w-xl mb-8 leading-relaxed">
+          Experience painless microscopic root canals, Invisalign &amp; Spark clear aligners, titanium implants, and same-day laser whitening across our Thrikkakara and Edappally centres.
         </p>
-        <div class="hero-actions">
-          <a href="#packages" class="btn btn-primary">Explore Treatment Packages</a>
-          <a href="https://maps.google.com/?q=Mother+Dental+Center+Triumph+Towers+Thrikkakara+Kochi" target="_blank" rel="noopener" class="btn btn-glass">Directions to Thrikkakara</a>
+
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#results" class="bg-white text-[#04241b] font-extrabold px-7 py-3.5 rounded-full text-sm hover:bg-emerald-50 transition shadow-xl">
+            Try Live Smile Slider →
+          </a>
+          <a href="https://maps.google.com/?q=Mother+Dental+Center+Triumph+Towers+Thrikkakara+Kochi" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full text-sm font-bold border border-white/25 bg-white/5 hover:bg-white/15 backdrop-blur-md transition">
+            Thrikkakara Clinic Map
+          </a>
         </div>
-        <div class="hero-highlights">
-          <div class="mini-stat">
-            <strong>20,000+</strong>
-            <span>Satisfied Patients</span>
+
+        <!-- Animated Authority Counters -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 pt-7 border-t border-white/15">
+          <div>
+            <strong class="block text-2xl sm:text-3xl font-extrabold text-emerald-300 counter" data-target="20000">0</strong>
+            <span class="text-xs text-emerald-100/70">Satisfied Patients</span>
           </div>
-          <div class="mini-stat">
-            <strong>10,000+</strong>
-            <span>Implants Placed</span>
+          <div>
+            <strong class="block text-2xl sm:text-3xl font-extrabold text-emerald-300 counter" data-target="10000">0</strong>
+            <span class="text-xs text-emerald-100/70">Implants Placed</span>
           </div>
-          <div class="mini-stat">
-            <strong>1,000+</strong>
-            <span>Invisalign Smiles</span>
+          <div>
+            <strong class="block text-2xl sm:text-3xl font-extrabold text-emerald-300 counter" data-target="100">0</strong>
+            <span class="text-xs text-emerald-100/70">Specialist Doctors</span>
+          </div>
+          <div>
+            <strong class="block text-2xl sm:text-3xl font-extrabold text-emerald-300 counter" data-target="13">0</strong>
+            <span class="text-xs text-emerald-100/70">Branches (India &amp; UAE)</span>
           </div>
         </div>
       </div>
 
-      <div class="concierge-card">
-        <div class="concierge-header">
-          <div>
-            <h3>Priority Appointment Desk</h3>
-            <p>Instant WhatsApp confirmation with zero waiting queue.</p>
+      <!-- Right Liquid-Glass Instant WhatsApp Concierge -->
+      <div class="lg:col-span-5">
+        <div id="bookingBox" class="glass-panel rounded-3xl p-6 sm:p-8 text-white transition duration-300">
+          <div class="flex items-start justify-between gap-3 mb-5">
+            <div>
+              <h2 class="text-xl font-extrabold tracking-tight">Instant WhatsApp Concierge</h2>
+              <p class="text-xs text-emerald-100/75 mt-1">Zero phone hold times — direct slot confirmation.</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-400/20 text-emerald-200 border border-emerald-300/30">
+              Live Desk
+            </span>
           </div>
-          <span class="live-tag">Instant Reply</span>
-        </div>
 
-        <form id="bookingForm">
-          <div class="field">
-            <label>Preferred Kochi Branch</label>
-            <div class="branch-pills">
-              <button type="button" class="branch-pill active" data-branch="Thrikkakara (Seaport-Airport Rd)">Thrikkakara</button>
-              <button type="button" class="branch-pill" data-branch="Edappally">Edappally</button>
+          <form id="waBookingForm" class="space-y-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-emerald-200 mb-1.5">Select Kochi Centre</label>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" class="branch-btn py-2.5 rounded-xl text-xs font-bold bg-emerald-400 text-[#032018] transition" data-branch="Thrikkakara (Seaport-Airport Rd)">
+                  Thrikkakara
+                </button>
+                <button type="button" class="branch-btn py-2.5 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition" data-branch="Edappally">
+                  Edappally
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label for="pName" class="block text-[11px] font-bold uppercase tracking-wider text-emerald-200 mb-1.5">Patient Name</label>
+              <input id="pName" type="text" required placeholder="Enter full name" class="w-full px-4 py-3 rounded-xl bg-white/95 text-[#062019] text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+            </div>
+
+            <div>
+              <label for="pTreatment" class="block text-[11px] font-bold uppercase tracking-wider text-emerald-200 mb-1.5">Treatment / Package</label>
+              <select id="pTreatment" class="w-full px-4 py-3 rounded-xl bg-white/95 text-[#062019] text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-400">
+                <option value="Invisible Aligners (Invisalign / Spark) 3D Scan">Invisible Aligners — 3D Smile Scan</option>
+                <option value="Hollywood Smile Makeover Package">Hollywood Smile Makeover Package</option>
+                <option value="Philips Zoom Same-Day Teeth Whitening">Philips Zoom Same-Day Whitening</option>
+                <option value="Advanced Dental Implant Consultation">Advanced Dental Implant Consultation</option>
+                <option value="Painless Microscopic Root Canal (RCT)">Painless Microscopic Root Canal</option>
+                <option value="Pediatric (Kids) Dental Care">Pediatric (Kids) Dental Visit</option>
+                <option value="Routine Check-up & Ultrasonic Scaling">Routine Check-up &amp; Cleaning</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="pTime" class="block text-[11px] font-bold uppercase tracking-wider text-emerald-200 mb-1.5">Preferred Time</label>
+              <select id="pTime" class="w-full px-4 py-3 rounded-xl bg-white/95 text-[#062019] text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-400">
+                <option value="Morning (9:30 AM – 1:00 PM)">Morning (9:30 AM – 1:00 PM)</option>
+                <option value="Afternoon (2:00 PM – 5:00 PM)">Afternoon (2:00 PM – 5:00 PM)</option>
+                <option value="Evening (5:00 PM – 8:00 PM)">Evening (5:00 PM – 8:00 PM)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-[#032018] font-extrabold text-sm shadow-lg shadow-emerald-500/30 hover:brightness-105 transition">
+              Reserve Appointment via WhatsApp →
+            </button>
+            <p class="text-[11px] text-center text-emerald-100/70">
+              Complete written treatment plan &amp; transparent cost provided before every procedure.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Before/After Section (Fixes their broken section) -->
+  <section id="results" class="py-20 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5">
+        <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3.5 py-1.5 rounded-full mb-4">
+          Interactive Smile Preview
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-emerald-950 leading-tight mb-4">
+          The Fix You’ve <span class="serif italic font-normal text-emerald-700">Been Looking For.</span>
+        </h2>
+        <p class="text-slate-600 mb-6 leading-relaxed">
+          Every treatment here ends the same way: a natural result worth showing. Drag the interactive slider to preview how our same-day <strong>Philips Zoom Whitening</strong> and <strong>Digital Smile Design</strong> brighten enamel safely without sensitivity.
+        </p>
+        <div class="space-y-3 mb-8 text-sm text-slate-700 font-medium">
+          <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">✓</span> 1,000+ Invisalign &amp; Clear Aligner Smiles Delivered</div>
+          <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">✓</span> In-House 3D Digital Scanning &amp; Smile Preview</div>
+          <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">✓</span> Custom Zirconia Crowns &amp; Porcelain Veneers</div>
+        </div>
+        <button onclick="selectPackage('Philips Zoom Same-Day Teeth Whitening')" class="bg-emerald-900 text-white font-bold text-sm px-7 py-3.5 rounded-full hover:bg-emerald-800 transition shadow-lg">
+          Book Smile Assessment →
+        </button>
+      </div>
+
+      <!-- Touch/Mouse Interactive Before/After Slider -->
+      <div class="lg:col-span-7">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-900/10 select-none aspect-[16/10] bg-emerald-950">
+          <!-- AFTER IMAGE (Base Layer) -->
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=85" alt="After Smile Transformation" class="w-full h-full object-cover pearl-filter" />
+          <span class="absolute top-4 right-4 z-20 bg-emerald-950/80 backdrop-blur-md text-emerald-200 text-xs font-bold px-3.5 py-1.5 rounded-full border border-white/15">
+            After • Zoom Whitening &amp; Polish
+          </span>
+
+          <!-- BEFORE IMAGE (Clipped Overlay) -->
+          <div id="beforeWrap" class="absolute inset-0 overflow-hidden" style="clip-path: inset(0 50% 0 0);">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=85" alt="Before Smile Shade" class="w-full h-full object-cover stain-filter" />
+            <span class="absolute top-4 left-4 z-20 bg-black/65 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full">
+              Before • Stained Shade
+            </span>
+          </div>
+
+          <!-- Divider Line & Handle -->
+          <div id="sliderLine" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_16px_rgba(0,0,0,0.6)] z-20 pointer-events-none" style="left: 50%;">
+            <div class="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white text-emerald-950 shadow-xl flex items-center justify-center font-extrabold text-sm">
+              ↔
             </div>
           </div>
 
-          <div class="field">
-            <label for="ptName">Patient Full Name</label>
-            <input type="text" id="ptName" placeholder="e.g., Rahul Nair" required />
-          </div>
+          <!-- Native Range Input for Flawless Mobile + Desktop Drag -->
+          <input id="smileRange" type="range" min="5" max="95" value="50" aria-label="Compare before and after smile" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" />
+        </div>
+        <p class="text-center text-xs text-slate-500 mt-3 font-medium">← Drag handle left or right to compare shade transformation →</p>
+      </div>
+    </div>
+  </section>
 
-          <div class="field">
-            <label for="ptService">Clinical Consultation / Package</label>
-            <select id="ptService">
-              <option value="Invisible Aligners / Clear Braces Scan">Invisible Aligners / Clear Braces Scan</option>
-              <option value="Hollywood Smile Makeover Package">Hollywood Smile Makeover Package</option>
-              <option value="Philips Zoom Same-Day Teeth Whitening">Philips Zoom Same-Day Teeth Whitening</option>
-              <option value="Advanced Dental Implant Consultation">Advanced Dental Implant Consultation</option>
-              <option value="Painless Microscopic Root Canal (RCT)">Painless Microscopic Root Canal (RCT)</option>
-              <option value="Pediatric (Kids) Dental Checkup">Pediatric (Kids) Dental Checkup</option>
-              <option value="Routine Check-up & Ultrasonic Cleaning">Routine Check-up &amp; Ultrasonic Cleaning</option>
-            </select>
-          </div>
+  <!-- Signature Treatment Packages -->
+  <section id="packages" class="py-20 bg-emerald-950 text-white reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-300 bg-white/10 px-4 py-1.5 rounded-full mb-3">
+          Signature Treatment Packages
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
+          All-Inclusive <span class="serif italic font-normal text-emerald-300">Smile Programs</span>
+        </h2>
+        <p class="text-emerald-100/75 text-sm sm:text-base">
+          Designed around clear upfront pricing, in-house digital diagnostics, and specialist care.
+        </p>
+      </div>
 
-          <div class="field">
-            <label for="ptSlot">Preferred Window</label>
-            <select id="ptSlot">
-              <option value="Morning (9:30 AM – 1:00 PM)">Morning (9:30 AM – 1:00 PM)</option>
-              <option value="Afternoon (2:00 PM – 5:00 PM)">Afternoon (2:00 PM – 5:00 PM)</option>
-              <option value="Evening (5:00 PM – 8:00 PM)">Evening (5:00 PM – 8:00 PM)</option>
-            </select>
+      <div class="grid md:grid-cols-3 gap-7">
+        <!-- Hollywood Smile -->
+        <div class="rounded-3xl bg-white/5 border border-white/15 p-7 flex flex-col justify-between hover:-translate-y-1.5 transition duration-300">
+          <div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-400/15 px-3 py-1 rounded-full mb-4">Veneers &amp; Symmetry</span>
+            <h3 class="text-2xl font-extrabold mb-4">Hollywood Smile</h3>
+            <ul class="space-y-3 text-sm text-emerald-50/85 mb-8">
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Whiter, natural-shade teeth</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Straighter alignment &amp; gap closure</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Comprehensive full-mouth checkup</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> In-house digital scanning &amp; labs</li>
+            </ul>
           </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
-            Confirm Slot via WhatsApp →
+          <button onclick="selectPackage('Hollywood Smile Makeover Package')" class="w-full py-3.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-emerald-950 font-bold text-sm transition">
+            Enquire Hollywood Smile →
           </button>
-          <div class="concierge-note">
-            Transparent treatment plan &amp; cost shared prior to every procedure.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <div class="metrics-band">
-    <div class="container metrics-grid">
-      <div class="metric-box">
-        <strong>20,000+</strong>
-        <span>Happy Smiles</span>
-      </div>
-      <div class="metric-box">
-        <strong>100+</strong>
-        <span>Doctors &amp; Specialists</span>
-      </div>
-      <div class="metric-box">
-        <strong>10,000+</strong>
-        <span>Dental Implants</span>
-      </div>
-      <div class="metric-box">
-        <strong>13+</strong>
-        <span>Dental Centres</span>
-      </div>
-      <div class="metric-box">
-        <strong>1,000+</strong>
-        <span>Clear Aligners Placed</span>
-      </div>
-    </div>
-  </div>
-
-  <section id="packages" class="reveal">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Signature Programs</span>
-        <h2>Curated <span class="serif">Smile Transformation</span> Packages</h2>
-        <p>All-inclusive aesthetic and restorative programs backed by in-house 3D digital scanning and specialist consultation.</p>
-      </div>
-
-      <div class="packages-grid">
-        <div class="pkg-card">
-          <div class="pkg-visual">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80" alt="Hollywood Smile Makeover" loading="lazy" />
-            <span class="pkg-tag">Digital Smile Design</span>
-          </div>
-          <div class="pkg-body">
-            <div>
-              <h3>Hollywood Smile</h3>
-              <ul class="check-list">
-                <li><span class="check-icon">✓</span> Custom porcelain veneers &amp; whiter shade</li>
-                <li><span class="check-icon">✓</span> Straighter symmetry &amp; gap closure</li>
-                <li><span class="check-icon">✓</span> Comprehensive full-mouth checkup</li>
-                <li><span class="check-icon">✓</span> In-house 3D digital scanning &amp; lab</li>
-              </ul>
+        <!-- Philips Zoom (Featured) -->
+        <div class="rounded-3xl bg-gradient-to-b from-emerald-800/80 to-emerald-900/90 border-2 border-emerald-400 p-7 flex flex-col justify-between shadow-2xl shadow-emerald-500/20 hover:-translate-y-1.5 transition duration-300">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#032018] bg-emerald-300 px-3 py-1 rounded-full">Most Requested</span>
+              <span class="text-xs text-emerald-200 font-semibold">1-Sitting Result</span>
             </div>
-            <button class="btn btn-glass" style="width:100%" onclick="prefillBooking('Hollywood Smile Makeover Package')">Enquire Package →</button>
+            <h3 class="text-2xl font-extrabold mb-4">Philips Zoom Teeth Whitening</h3>
+            <ul class="space-y-3 text-sm text-emerald-50 mb-8">
+              <li class="flex items-center gap-2.5"><span class="text-emerald-300 font-bold">✓</span> Advanced ultrasonic teeth cleaning</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-300 font-bold">✓</span> Full mouth checkup included</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-300 font-bold">✓</span> Same-day clinical laser whitening</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-300 font-bold">✓</span> Consultation with specialist team</li>
+            </ul>
           </div>
+          <button onclick="selectPackage('Philips Zoom Same-Day Teeth Whitening')" class="w-full py-3.5 rounded-full bg-emerald-400 hover:bg-emerald-300 text-[#032018] font-extrabold text-sm transition shadow-lg">
+            Book Same-Day Whitening →
+          </button>
         </div>
 
-        <div class="pkg-card featured">
-          <div class="pkg-visual">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Philips Zoom Teeth Whitening" loading="lazy" />
-            <span class="pkg-tag">Most Popular • Same Day</span>
+        <!-- Dental Implant -->
+        <div class="rounded-3xl bg-white/5 border border-white/15 p-7 flex flex-col justify-between hover:-translate-y-1.5 transition duration-300">
+          <div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-400/15 px-3 py-1 rounded-full mb-4">Permanent Restoration</span>
+            <h3 class="text-2xl font-extrabold mb-4">Advanced Dental Implant</h3>
+            <ul class="space-y-3 text-sm text-emerald-50/85 mb-8">
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> 3D digital jaw &amp; bite scanning</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Single-tooth or full-mouth implants</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Consultation with digital smile preview</li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-400 font-bold">✓</span> Complete full-mouth health evaluation</li>
+            </ul>
           </div>
-          <div class="pkg-body">
-            <div>
-              <h3>Philips Zoom Teeth Whitening</h3>
-              <ul class="check-list">
-                <li><span class="check-icon">✓</span> Same-day clinical laser whitening</li>
-                <li><span class="check-icon">✓</span> Advanced ultrasonic teeth cleaning</li>
-                <li><span class="check-icon">✓</span> Enamel-safe sensitivity protection</li>
-                <li><span class="check-icon">✓</span> Full mouth checkup with specialist team</li>
-              </ul>
-            </div>
-            <button class="btn btn-primary" style="width:100%" onclick="prefillBooking('Philips Zoom Same-Day Teeth Whitening')">Book Whitening Session →</button>
-          </div>
-        </div>
-
-        <div class="pkg-card">
-          <div class="pkg-visual">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Advanced Dental Implant" loading="lazy" />
-            <span class="pkg-tag">Lifetime Strength</span>
-          </div>
-          <div class="pkg-body">
-            <div>
-              <h3>Advanced Dental Implant</h3>
-              <ul class="check-list">
-                <li><span class="check-icon">✓</span> 3D CBCT &amp; precision digital scanning</li>
-                <li><span class="check-icon">✓</span> Single-tooth or full-mouth implant options</li>
-                <li><span class="check-icon">✓</span> Consultation with digital smile preview</li>
-                <li><span class="check-icon">✓</span> Biocompatible titanium &amp; zirconia crowns</li>
-              </ul>
-            </div>
-            <button class="btn btn-glass" style="width:100%" onclick="prefillBooking('Advanced Dental Implant Consultation')">Consult Implantologist →</button>
-          </div>
+          <button onclick="selectPackage('Advanced Dental Implant Consultation')" class="w-full py-3.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-emerald-950 font-bold text-sm transition">
+            Consult Implant Specialist →
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="specialties" class="section-soft reveal">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Multi-Specialty Departments</span>
-        <h2>Every Dental Specialty, <span class="serif">One Trusted Address</span></h2>
-        <p>Filter treatments by clinical need—you always see a dedicated specialist for your exact concern, never just a generalist on duty.</p>
+  <!-- Clinical Specialties with Filter -->
+  <section id="specialties" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 reveal">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3.5 py-1.5 rounded-full mb-3">
+        Multi-Specialty Hospital
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-emerald-950 mb-3">
+        Dedicated Specialists for <span class="serif italic font-normal text-emerald-700">Every Tooth</span>
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base">
+        Every patient is treated by a State Dental Council-licensed specialist in that exact discipline.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2.5 mb-10">
+      <button class="filter-pill active px-5 py-2 rounded-full text-xs font-bold bg-emerald-900 text-white transition" data-cat="all">All Departments</button>
+      <button class="filter-pill px-5 py-2 rounded-full text-xs font-bold bg-white border border-emerald-900/15 text-slate-700 hover:border-emerald-700 transition" data-cat="ortho">Aligners &amp; Cosmetic</button>
+      <button class="filter-pill px-5 py-2 rounded-full text-xs font-bold bg-white border border-emerald-900/15 text-slate-700 hover:border-emerald-700 transition" data-cat="restore">Implants &amp; Root Canal</button>
+      <button class="filter-pill px-5 py-2 rounded-full text-xs font-bold bg-white border border-emerald-900/15 text-slate-700 hover:border-emerald-700 transition" data-cat="care">Kids &amp; Gum Care</button>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="dept-card bg-white rounded-2xl p-6 border border-emerald-900/10 shadow-sm hover:shadow-xl transition" data-cat="ortho">
+        <h3 class="text-lg font-extrabold text-emerald-950 mb-2">Clear Aligners &amp; Orthodontics</h3>
+        <p class="text-sm text-slate-600 mb-4">Invisalign, Spark Clear Aligners, and ceramic braces planned by resident MDS Orthodontists for teens and adults.</p>
+        <button onclick="selectPackage('Invisible Aligners (Invisalign / Spark) 3D Scan')" class="text-xs font-extrabold text-emerald-700 hover:underline">Book Aligner Consultation →</button>
       </div>
 
-      <div class="filter-tabs">
-        <button class="tab-btn active" data-filter="all">All Specialties</button>
-        <button class="tab-btn" data-filter="aesthetic">Aligners &amp; Cosmetic</button>
-        <button class="tab-btn" data-filter="restorative">Implants &amp; Root Canal</button>
-        <button class="tab-btn" data-filter="family">Kids &amp; Preventive</button>
+      <div class="dept-card bg-white rounded-2xl p-6 border border-emerald-900/10 shadow-sm hover:shadow-xl transition" data-cat="restore">
+        <h3 class="text-lg font-extrabold text-emerald-950 mb-2">Fixed Restorative &amp; Full Mouth Rehab</h3>
+        <p class="text-sm text-slate-600 mb-4">Precision zirconia crowns, bridges, and implant-supported restorations built for lifelong comfort and bite strength.</p>
+        <button onclick="selectPackage('Advanced Dental Implant Consultation')" class="text-xs font-extrabold text-emerald-700 hover:underline">Schedule Restorative Check →</button>
       </div>
 
-      <div class="services-grid" id="servicesGrid">
-        <div class="srv-card" data-cat="aesthetic">
-          <div class="srv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12c2.5-4 5.5-6 8-6s5.5 2 8 6c-2.5 4-5.5 6-8 6s-5.5-2-8-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
-          </div>
-          <h3>Invisalign &amp; Spark Clear Aligners</h3>
-          <p>Removable, nearly invisible aligners custom-molded to straighten teeth comfortably without metal brackets or wires.</p>
-          <a href="#concierge" class="srv-link" onclick="prefillBooking('Invisible Aligners / Clear Braces Scan')">Book 3D Scan →</a>
-        </div>
+      <div class="dept-card bg-white rounded-2xl p-6 border border-emerald-900/10 shadow-sm hover:shadow-xl transition" data-cat="restore">
+        <h3 class="text-lg font-extrabold text-emerald-950 mb-2">Microscopic Endodontics (RCT)</h3>
+        <p class="text-sm text-slate-600 mb-4">Single-sitting painless root canal treatments using rotary and laser disinfection to save infected natural teeth.</p>
+        <button onclick="selectPackage('Painless Microscopic Root Canal (RCT)')" class="text-xs font-extrabold text-emerald-700 hover:underline">Book Pain-Relief Slot →</button>
+      </div>
 
-        <div class="srv-card" data-cat="restorative">
-          <div class="srv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m-4-2h8M9 12h6l-1 9h-4l-1-9z"/></svg>
-          </div>
-          <h3>Fixed Restorative &amp; Full Mouth Rehab</h3>
-          <p>Precision zirconia crowns, bridges, and full-arch restorations engineered for natural aesthetics and lasting bite strength.</p>
-          <a href="#concierge" class="srv-link" onclick="prefillBooking('Advanced Dental Implant Consultation')">Schedule Evaluation →</a>
-        </div>
+      <div class="dept-card bg-white rounded-2xl p-6 border border-emerald-900/10 shadow-sm hover:shadow-xl transition" data-cat="care">
+        <h3 class="text-lg font-extrabold text-emerald-950 mb-2">Pedodontics (Kids Dentistry)</h3>
+        <p class="text-sm text-slate-600 mb-4">Gentle, fear-free dental checkups, habit-breaking appliances, and preventive fluoride care kids genuinely enjoy.</p>
+        <button onclick="selectPackage('Pediatric (Kids) Dental Care')" class="text-xs font-extrabold text-emerald-700 hover:underline">Book Kids Dental Visit →</button>
+      </div>
 
-        <div class="srv-card" data-cat="restorative">
-          <div class="srv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Endodontics &amp; Painless Root Canal</h3>
-          <p>Single-visit rotary and laser-assisted root canal therapy by MDS Endodontists to save natural teeth painlessly.</p>
-          <a href="#concierge" class="srv-link" onclick="prefillBooking('Painless Microscopic Root Canal (RCT)')">Book Relief Slot →</a>
-        </div>
+      <div class="dept-card bg-white rounded-2xl p-6 border border-emerald-900/10 shadow-sm hover:shadow-xl transition" data-cat="care">
+        <h3 class="text-lg font-extrabold text-emerald-950 mb-2">Periodontics &amp; Laser Gum Therapy</h3>
+        <p class="text-sm text-slate-600 mb-4">Specialist care for bleeding gums, deep ultrasonic scaling, and painless laser gum contouring.</p>
+        <button onclick="selectPackage('Routine Check-up & Ultrasonic Scaling')" class="text-xs font-extrabold text-emerald-700 hover:underline">Schedule Gum Assessment →</button>
+      </div>
 
-        <div class="srv-card" data-cat="aesthetic">
-          <div class="srv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 9 22 9 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9 9 9"/></svg>
-          </div>
-          <h3>Orthodontics &amp; Ceramic Braces</h3>
-          <p>Comprehensive bite correction for teens and adults using self-ligating metal, ceramic, and clear orthodontic systems.</p>
-          <a href="#concierge" class="srv-link" onclick="prefillBooking('Invisible Aligners / Clear Braces Scan')">Consult Orthodontist →</a>
-        </div>
-
-        <div class="srv-card" data-cat="family">
-          <div class="srv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 0 0 5 0"/></svg>
-          </div>
-          <h3>Pediatric (Kids) Dentistry</h3>
-          <p>Gentle, anxiety-free dental checkups, fluoride therapy, and preventive habit correction tailored specifically for children.</p>
-          <a href="#concierge" class="srv-link" onclick="prefillBooking('Pediatric (Kids) Dental Checkup')">Book Kids Visit →</a>
-        </div>
-
-        <div class="srv-card" data-cat="family">
-          <div class="srv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
-          </div>
-          <h3>Periodontics &amp; Laser Gum Care</h3>
-          <p>Specialist treatment for bleeding gums, deep scaling, and painless laser gum contouring for a healthy periodontal foundation.</p>
-          <a href="#concierge" class="srv-link" onclick="prefillBooking('Routine Check-up & Ultrasonic Cleaning')">Schedule Gum Care →</a>
-        </div>
+      <div class="dept-card bg-white rounded-2xl p-6 border border-emerald-900/10 shadow-sm hover:shadow-xl transition" data-cat="ortho">
+        <h3 class="text-lg font-extrabold text-emerald-950 mb-2">Cosmetic Smile Designing</h3>
+        <p class="text-sm text-slate-600 mb-4">Digital Smile Design, ultra-thin porcelain veneers, and composite bonding tailored to your facial symmetry.</p>
+        <button onclick="selectPackage('Hollywood Smile Makeover Package')" class="text-xs font-extrabold text-emerald-700 hover:underline">Explore Smile Design →</button>
       </div>
     </div>
   </section>
 
-  <section id="doctors" class="reveal">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">State Dental Council Verified</span>
-        <h2>Meet Our Kochi <span class="serif">Clinical Specialists</span></h2>
-        <p>Experienced MDS specialists and resident dental surgeons committed to clear, honest treatment plans with zero hidden surprises.</p>
+  <!-- Kochi Doctors & Mother Group Heritage -->
+  <section id="doctors" class="py-20 bg-emerald-50/70 border-y border-emerald-900/10 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-white px-3.5 py-1.5 rounded-full mb-3 border border-emerald-900/10">
+          Kochi Clinical Panel
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-emerald-950">
+          Experienced <span class="serif italic font-normal text-emerald-700">MDS &amp; BDS</span> Specialists
+        </h2>
       </div>
 
-      <div class="doctors-grid">
-        <div class="doc-card">
-          <div class="doc-monogram">DC</div>
-          <div class="doc-meta">
-            <span class="doc-degree">BDS, MDS</span>
-            <h4>Dr. Divya Chandrasekaran</h4>
-            <span class="doc-role">Resident Orthodontist</span>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div class="bg-white p-5 rounded-2xl border border-emerald-900/10 flex items-center gap-4 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-900 text-emerald-200 font-extrabold flex items-center justify-center text-lg shrink-0">DC</div>
+          <div>
+            <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">BDS, MDS</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">Dr. Divya Chandrasekaran</h4>
+            <p class="text-xs text-slate-500">Resident Orthodontist</p>
           </div>
         </div>
-
-        <div class="doc-card">
-          <div class="doc-monogram">SL</div>
-          <div class="doc-meta">
-            <span class="doc-degree">BDS, MDS</span>
-            <h4>Dr. Silna</h4>
-            <span class="doc-role">Resident Endodontist</span>
+        <div class="bg-white p-5 rounded-2xl border border-emerald-900/10 flex items-center gap-4 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-900 text-emerald-200 font-extrabold flex items-center justify-center text-lg shrink-0">SL</div>
+          <div>
+            <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">BDS, MDS</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">Dr. Silna</h4>
+            <p class="text-xs text-slate-500">Resident Endodontist</p>
           </div>
         </div>
-
-        <div class="doc-card">
-          <div class="doc-monogram">SS</div>
-          <div class="doc-meta">
-            <span class="doc-degree">BDS, MDS</span>
-            <h4>Dr. Shemnidha Saleem</h4>
-            <span class="doc-role">Resident Pedodontist</span>
+        <div class="bg-white p-5 rounded-2xl border border-emerald-900/10 flex items-center gap-4 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-900 text-emerald-200 font-extrabold flex items-center justify-center text-lg shrink-0">SS</div>
+          <div>
+            <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">BDS, MDS</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">Dr. Shemnidha Saleem</h4>
+            <p class="text-xs text-slate-500">Resident Pedodontist</p>
           </div>
         </div>
-
-        <div class="doc-card">
-          <div class="doc-monogram">AV</div>
-          <div class="doc-meta">
-            <span class="doc-degree">BDS</span>
-            <h4>Dr. Ajna Venugopal</h4>
-            <span class="doc-role">Resident Dental Surgeon</span>
+        <div class="bg-white p-5 rounded-2xl border border-emerald-900/10 flex items-center gap-4 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-800 text-white font-extrabold flex items-center justify-center text-lg shrink-0">AV</div>
+          <div>
+            <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">BDS</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">Dr. Ajna Venugopal</h4>
+            <p class="text-xs text-slate-500">Resident Dental Surgeon</p>
           </div>
         </div>
-
-        <div class="doc-card">
-          <div class="doc-monogram">RW</div>
-          <div class="doc-meta">
-            <span class="doc-degree">BDS</span>
-            <h4>Dr. Reeba Wilson</h4>
-            <span class="doc-role">Resident Dental Surgeon</span>
+        <div class="bg-white p-5 rounded-2xl border border-emerald-900/10 flex items-center gap-4 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-800 text-white font-extrabold flex items-center justify-center text-lg shrink-0">RW</div>
+          <div>
+            <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">BDS</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">Dr. Reeba Wilson</h4>
+            <p class="text-xs text-slate-500">Resident Dental Surgeon</p>
           </div>
         </div>
-
-        <div class="doc-card">
-          <div class="doc-monogram">AB</div>
-          <div class="doc-meta">
-            <span class="doc-degree">BDS</span>
-            <h4>Dr. Ahbiraj</h4>
-            <span class="doc-role">Resident Dental Surgeon</span>
+        <div class="bg-white p-5 rounded-2xl border border-emerald-900/10 flex items-center gap-4 shadow-sm">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-800 text-white font-extrabold flex items-center justify-center text-lg shrink-0">AB</div>
+          <div>
+            <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">BDS</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">Dr. Ahbiraj</h4>
+            <p class="text-xs text-slate-500">Resident Dental Surgeon</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="reveal" style="padding-top: 20px;">
-    <div class="container">
-      <div class="heritage-card">
-        <div>
-          <span class="eyebrow" style="background: rgba(255,255,255,0.14); color: #6ee7b7;">Mother Group Heritage • India &amp; GCC</span>
-          <h2>Backed by a Trusted <span class="serif">28+ Branch</span> Healthcare Network</h2>
-          <p>
-            Under the leadership of Chairman <strong>T.V. Musthafa</strong>, the Mother Group has grown across South India and the UAE by uniting internationally accepted clinical protocols, digital dentistry, and accessible family care.
-          </p>
-          <p>
-            Before any procedure begins, you receive a complete written roadmap outlining what is needed, exact pricing, and expected timeline—no vague promises and no hidden costs.
+      <!-- Mother Group Heritage & Guarantee Banner -->
+      <div class="rounded-3xl bg-gradient-to-br from-[#04241b] to-emerald-900 text-white p-8 sm:p-12 grid lg:grid-cols-12 gap-8 items-center shadow-2xl">
+        <div class="lg:col-span-7">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-300">Mother Group Legacy • India &amp; GCC</span>
+          <h3 class="text-2xl sm:text-4xl font-extrabold mt-2 mb-4">Backed by a Trusted 28+ Branch Healthcare Network</h3>
+          <p class="text-emerald-100/85 text-sm sm:text-base leading-relaxed">
+            Guided by Chairman <strong>T.V. Musthafa</strong>, Mother Dental Hospital unites international sterilization standards, modern digital dentistry, and honest, upfront pricing across Kerala and the UAE—so your family is always in safe hands.
           </p>
         </div>
-
-        <div class="guarantee-box">
-          <h3>THE MOTHER DENTAL GUARANTEE</h3>
-          <div class="guarantee-grid">
-            <div class="g-item"><span class="check-icon">✓</span> Licensed State Dental Council Specialists</div>
-            <div class="g-item"><span class="check-icon">✓</span> Transparent Upfront Pricing — Zero Hidden Fees</div>
-            <div class="g-item"><span class="check-icon">✓</span> 24/7 Same-Day Emergency Dental Care</div>
-            <div class="g-item"><span class="check-icon">✓</span> Strict Hospital-Grade Sterilization Protocols</div>
-            <div class="g-item"><span class="check-icon">✓</span> Dedicated Specialist for Every Procedure</div>
-          </div>
+        <div class="lg:col-span-5 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6">
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-emerald-300 mb-3">We Guarantee</h4>
+          <ul class="space-y-2.5 text-sm text-emerald-50">
+            <li>✓ Clear written pricing — zero hidden surprises</li>
+            <li>✓ State Dental Council-licensed specialists</li>
+            <li>✓ 24/7 emergency dental pain &amp; trauma support</li>
+            <li>✓ Personalized family care in one place</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="reviews" class="section-soft reveal">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">4.9 ★ Google Rating</span>
-        <h2>Trusted by <span class="serif">1,310+ Families</span> Across Ernakulam</h2>
-        <p>Real, unedited feedback from patients treated at our Kochi dental centres.</p>
+  <!-- Infinite Marquee of Uncut 4.9★ Google Reviews -->
+  <section id="reviews" class="py-20 overflow-hidden reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-12">
+      <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3.5 py-1.5 rounded-full mb-3">
+        4.9 ★ Across 1,310+ Google Reviews
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-emerald-950">
+        Why Kochi Families <span class="serif italic font-normal text-emerald-700">Trust Mother Dental</span>
+      </h2>
+    </div>
+
+    <div class="marquee-track gap-6 px-4">
+      <!-- Set 1 -->
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"I've always dreaded the dentist, but Mother Dental Thrikkakara completely changed that. The doctors are patient, answer all your questions, and genuinely care about your comfort."</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Aubin Joe • Google Review</strong>
       </div>
-
-      <div class="reviews-grid">
-        <div class="rev-card">
-          <div>
-            <div class="stars-svg">★★★★★</div>
-            <p class="rev-quote">
-              "I've always dreaded the dentist, but Mother Dental Thrikkakara completely changed that. The doctors are patient, answer all your questions clearly, and genuinely care about your comfort throughout the visit."
-            </p>
-          </div>
-          <div class="rev-author">
-            <strong>Aubin Joe</strong>
-            <span class="g-badge">Verified Google Review</span>
-          </div>
-        </div>
-
-        <div class="rev-card">
-          <div>
-            <div class="stars-svg">★★★★★</div>
-            <p class="rev-quote">
-              "I was looking to get in quickly, and they went above and beyond to assist me with my appointments ASAP. The team is efficient, welcoming, and makes the whole process completely stress-free."
-            </p>
-          </div>
-          <div class="rev-author">
-            <strong>Arvin Matthew</strong>
-            <span class="g-badge">Verified Google Review</span>
-          </div>
-        </div>
-
-        <div class="rev-card">
-          <div>
-            <div class="stars-svg">★★★★★</div>
-            <p class="rev-quote">
-              "Excellent dental clinic with friendly and professional staff. The clinic is clean, well-maintained, and provides great care. Highly recommended for anyone looking for quality dental services in Kochi."
-            </p>
-          </div>
-          <div class="rev-author">
-            <strong>Jyothika Jyothish</strong>
-            <span class="g-badge">Verified Google Review</span>
-          </div>
-        </div>
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"I was looking to get in quickly, and they went above and beyond to assist me ASAP. Efficient, welcoming, and completely stress-free. Fantastic and speedy service!"</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Arvin Matthew • Google Review</strong>
+      </div>
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"The clinic is clean, well-organized, and very professional. The staff are friendly and helpful, making patients feel comfortable throughout the entire visit."</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Zuba Susha • Google Review</strong>
+      </div>
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"Consulted Dr. Rabees for composite treatment. Extremely satisfied with the natural results and the entire procedure was very comfortable."</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Hiba Jasmine • Google Review</strong>
+      </div>
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"Dr. Megha was friendly, professional, and made me feel comfortable throughout the treatment. Clean, well-organized clinic—highly recommended!"</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Jubna Jubna • Google Review</strong>
+      </div>
+      <!-- Duplicate Set for Seamless Loop -->
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"Excellent dental clinic with friendly and professional staff. Well-maintained and provides great care. Highly recommended for quality dental services in Kochi."</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Jyothika Jyothish • Google Review</strong>
+      </div>
+      <div class="w-80 sm:w-96 shrink-0 bg-white p-6 rounded-2xl border border-emerald-900/10 shadow-sm">
+        <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"I've always dreaded the dentist, but Mother Dental Thrikkakara completely changed that. The doctors are patient, answer all your questions, and genuinely care about your comfort."</p>
+        <strong class="text-xs font-extrabold text-emerald-950">Aubin Joe • Google Review</strong>
       </div>
     </div>
   </section>
 
-  <section id="visit" class="reveal">
-    <div class="container visit-grid">
+  <!-- FAQ & Thrikkakara Location -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 items-start reveal">
+    <div class="lg:col-span-7 space-y-3">
+      <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3.5 py-1.5 rounded-full mb-2">Patient FAQ</span>
+      <h2 class="text-3xl font-extrabold text-emerald-950 mb-4">Common Questions Answered</h2>
+
+      <details open class="bg-white rounded-2xl border border-emerald-900/10 p-5 group">
+        <summary class="font-bold text-emerald-950 cursor-pointer list-none flex justify-between items-center">
+          Are dental implants a durable long-term replacement for missing teeth?
+          <span class="text-emerald-600 font-extrabold">+</span>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3">Yes. Biocompatible titanium implants fuse with your jawbone to prevent bone loss and support custom zirconia crowns that function like natural teeth for decades.</p>
+      </details>
+
+      <details class="bg-white rounded-2xl border border-emerald-900/10 p-5">
+        <summary class="font-bold text-emerald-950 cursor-pointer list-none flex justify-between items-center">
+          How long do Philips Zoom teeth whitening results last?
+          <span class="text-emerald-600 font-extrabold">+</span>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3">With routine brushing and six-month cleanings, clinical Zoom whitening keeps your smile noticeably brighter for 12 to 24 months from a single appointment.</p>
+      </details>
+
+      <details class="bg-white rounded-2xl border border-emerald-900/10 p-5">
+        <summary class="font-bold text-emerald-950 cursor-pointer list-none flex justify-between items-center">
+          Do you handle sudden dental emergencies or anxious children?
+          <span class="text-emerald-600 font-extrabold">+</span>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3">Yes—we provide 24/7 emergency coordination (+91 97476 43000) for acute toothaches or trauma, alongside dedicated pediatric dentists trained in gentle, anxiety-free care.</p>
+      </details>
+    </div>
+
+    <div class="lg:col-span-5 bg-white rounded-3xl p-8 border border-emerald-900/10 shadow-xl">
+      <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700">Visit Our Kochi Flagship</span>
+      <h3 class="text-2xl font-extrabold text-emerald-950 mt-1 mb-4">Mother Dental Center — Thrikkakara</h3>
+      <div class="space-y-3 text-sm text-slate-600 mb-6">
+        <p><strong class="text-emerald-950">Address:</strong> Triumph Towers, Seaport–Airport Rd, near Naipunnya Public School, Judgemukku, Thrikkakara, Ernakulam, Kerala 682021</p>
+        <p><strong class="text-emerald-950">Kochi Network:</strong> Thrikkakara &amp; Edappally (Plus Calicut, Kannur, Thrissur &amp; UAE)</p>
+        <p><strong class="text-emerald-950">Direct Desk:</strong> +91 97476 43000 / +91 92880 04880</p>
+        <p><strong class="text-emerald-950">Email:</strong> info@motherdentalhospital.in</p>
+      </div>
+      <a href="https://maps.google.com/?q=Mother+Dental+Center+Triumph+Towers+Thrikkakara+Kochi" target="_blank" rel="noopener" class="block text-center w-full py-3.5 rounded-full bg-emerald-900 text-white font-bold text-sm hover:bg-emerald-800 transition">
+        Launch Google Maps Directions →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#02120d] text-emerald-100/65 py-12 text-xs border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap justify-between items-center gap-4">
       <div>
-        <span class="eyebrow">Patient Guide</span>
-        <h2 style="font-size: 2.2rem; color: var(--emerald-950); margin-bottom: 24px;">Frequently Asked Questions</h2>
-
-        <div class="faq-item open">
-          <button class="faq-q">How do I schedule a consultation at your Kochi clinic? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Use the Priority Appointment form at the top of this page to send your preferred branch and time directly to our WhatsApp desk (+91 97476 43000), or call us directly for immediate same-day slots.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">Are dental implants a permanent solution for missing teeth? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Yes. Titanium implants integrate directly with your jawbone to prevent bone loss and support custom crowns that look, feel, and function like natural teeth for decades with routine care.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">Do you offer sedation or comfort options for anxious patients &amp; kids? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Absolutely. Our resident pedodontists and specialists use gentle topical numbing, painless rotary instrumentation, and calm step-by-step pacing so anxious adults and children feel completely safe.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">How do you handle sudden toothaches or dental emergencies? <span class="faq-plus">+</span></button>
-          <div class="faq-a">We provide priority same-day emergency dental relief. Call +91 97476 43000 anytime for urgent pain management, swelling, trauma, or broken crowns.</div>
-        </div>
+        <strong class="text-white text-sm">Mother Dental Hospital</strong> • Sister Concerns: Mother Opticals &amp; Eye Clinic | MR Group
       </div>
-
-      <div class="clinic-card">
-        <span class="eyebrow">Kochi Flagship Centre</span>
-        <h3>Mother Dental Center — Thrikkakara</h3>
-        <div class="clinic-detail">
-          <strong>Address</strong>
-          Triumph Towers, Seaport–Airport Rd, near Naipunnya Public School, Judgemukku, Thrikkakara, Ernakulam, Kerala 682021
-        </div>
-        <div class="clinic-detail">
-          <strong>Additional Kochi Branch</strong>
-          Edappally, Ernakulam (Plus centres in Calicut, Kannur, Thrissur &amp; UAE)
-        </div>
-        <div class="clinic-detail">
-          <strong>Clinical Hours</strong>
-          Monday – Sunday: 9:30 AM – 8:00 PM
-        </div>
-        <div class="clinic-detail" style="border-bottom: none;">
-          <strong>Direct Contact</strong>
-          Appointments: +91 97476 43000 • Support: +91 92880 04880<br />
-          Email: info@motherdentalhospital.in
-        </div>
-        <a href="https://maps.google.com/?q=Mother+Dental+Center+Triumph+Towers+Thrikkakara+Kochi" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
-          Open Google Maps Navigation →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Mother Dental Hospital</h4>
-          <p>Multi-specialty dental hospital network across Kerala and the UAE, delivering digital dentistry, implants, clear aligners, and compassionate family care.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Key Treatments</h4>
-          <ul>
-            <li><a href="#packages">Hollywood Smile</a></li>
-            <li><a href="#packages">Philips Zoom Whitening</a></li>
-            <li><a href="#packages">Advanced Dental Implants</a></li>
-            <li><a href="#specialties">Invisible Aligners</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Network Locations</h4>
-          <ul>
-            <li><a href="#visit">Dental Clinic Kochi (Thrikkakara &amp; Edappally)</a></li>
-            <li><a href="#visit">Dental Clinic Calicut</a></li>
-            <li><a href="#visit">Dental Clinic Kannur</a></li>
-            <li><a href="#visit">Dental Clinic Thrissur</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Sister Concerns</h4>
-          <ul>
-            <li><a href="#visit">Mother Opticals &amp; Eye Clinic</a></li>
-            <li><a href="#visit">MR Group (India &amp; GCC)</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Mother Dental Hospital. Concept Flagship Experience Preview.</span>
-        <span>Designed for Mobile &amp; Instant Patient Conversion</span>
-      </div>
+      <div>© 2026 Mother Dental Flagship Concept Preview • Kochi, Kerala</div>
     </div>
   </footer>
 
-  <div class="floating-dock">
-    <a href="tel:+919747643000" class="dock-btn dock-call">Call Desk</a>
-    <a href="https://wa.me/919747643000?text=Hi%20Mother%20Dental%20Kochi%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment." target="_blank" rel="noopener" class="dock-btn dock-wa">WhatsApp Chat</a>
-  </div>
-
   <script>
-    // Branch Pill Toggle
-    let selectedBranch = 'Thrikkakara (Seaport-Airport Rd)';
-    document.querySelectorAll('.branch-pill').forEach(btn => {
+    // Branch Switcher
+    let chosenBranch = 'Thrikkakara (Seaport-Airport Rd)';
+    document.querySelectorAll('.branch-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.branch-pill').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedBranch = btn.dataset.branch;
+        document.querySelectorAll('.branch-btn').forEach(b => {
+          b.className = 'branch-btn py-2.5 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition';
+        });
+        btn.className = 'branch-btn py-2.5 rounded-xl text-xs font-bold bg-emerald-400 text-[#032018] transition';
+        chosenBranch = btn.dataset.branch;
       });
     });
 
-    // Prefill Concierge from Package/Service Cards
-    function prefillBooking(serviceName) {
-      const select = document.getElementById('ptService');
-      select.value = serviceName;
+    // Prefill Package & Highlight Concierge Card
+    function selectPackage(pkgName) {
+      document.getElementById('pTreatment').value = pkgName;
       document.getElementById('concierge').scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => document.getElementById('ptName').focus(), 550);
+      const box = document.getElementById('bookingBox');
+      box.classList.add('ring-4', 'ring-emerald-400');
+      setTimeout(() => {
+        document.getElementById('pName').focus();
+        box.classList.remove('ring-4', 'ring-emerald-400');
+      }, 1100);
     }
 
-    // WhatsApp Booking Submission
-    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    // WhatsApp Booking Redirect
+    document.getElementById('waBookingForm').addEventListener('submit', e => {
       e.preventDefault();
-      const name = document.getElementById('ptName').value.trim();
-      const service = document.getElementById('ptService').value;
-      const slot = document.getElementById('ptSlot').value;
-      const text = `Hi Mother Dental Kochi, I would like to request a priority appointment:\n• Patient: ${name}\n• Branch: ${selectedBranch}\n• Consultation: ${service}\n• Preferred Window: ${slot}`;
-      window.open(`https://wa.me/919747643000?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+      const name = document.getElementById('pName').value.trim();
+      const trt = document.getElementById('pTreatment').value;
+      const slot = document.getElementById('pTime').value;
+      const msg = `Hi Mother Dental Kochi, I would like to book a priority appointment:\n• Name: ${name}\n• Branch: ${chosenBranch}\n• Treatment: ${trt}\n• Preferred Time: ${slot}`;
+      window.open(`https://wa.me/919747643000?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     });
 
-    // Specialty Filter Tabs
-    document.querySelectorAll('.tab-btn').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const filter = tab.dataset.filter;
-        document.querySelectorAll('.srv-card').forEach(card => {
-          card.style.display = (filter === 'all' || card.dataset.cat === filter) ? 'block' : 'none';
+    // Interactive Before/After Smile Slider
+    const smileRange = document.getElementById('smileRange');
+    const beforeWrap = document.getElementById('beforeWrap');
+    const sliderLine = document.getElementById('sliderLine');
+    smileRange.addEventListener('input', e => {
+      const val = e.target.value;
+      beforeWrap.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+      sliderLine.style.left = `${val}%`;
+    });
+
+    // Specialty Filter Pills
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(p => {
+          p.className = 'filter-pill px-5 py-2 rounded-full text-xs font-bold bg-white border border-emerald-900/15 text-slate-700 hover:border-emerald-700 transition';
+        });
+        pill.className = 'filter-pill active px-5 py-2 rounded-full text-xs font-bold bg-emerald-900 text-white transition';
+        const cat = pill.dataset.cat;
+        document.querySelectorAll('.dept-card').forEach(c => {
+          c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
         });
       });
     });
 
-    // FAQ Accordion
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.classList.toggle('open');
-      });
-    });
-
-    // Scroll Reveal Observer
-    const observer = new IntersectionObserver(entries => {
+    // Animated Counters & Scroll Reveal
+    const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          entry.target.querySelectorAll?.('.counter').forEach(el => {
+            if (el.dataset.done) return;
+            el.dataset.done = '1';
+            const target = +el.dataset.target;
+            let cur = 0;
+            const step = Math.max(1, Math.ceil(target / 45));
+            const timer = setInterval(() => {
+              cur = Math.min(target, cur + step);
+              el.textContent = cur.toLocaleString() + '+';
+              if (cur >= target) clearInterval(timer);
+            }, 24);
+          });
+        }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, #concierge').forEach(el => io.observe(el));
 
-    // Subtle Cursor-Reactive Topographic Contour Canvas
-    const canvas = document.getElementById('topoCanvas');
+    // Cursor-Reactive Topographic Canvas
+    const canvas = document.getElementById('contourCanvas');
     const ctx = canvas.getContext('2d');
-    let width, height, mouseX = 0.5, mouseY = 0.5, tick = 0;
-
+    let mx = 0.5, my = 0.5, t = 0;
     function resize() {
-      width = canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      height = canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      canvas.width = canvas.offsetWidth * devicePixelRatio;
+      canvas.height = canvas.offsetHeight * devicePixelRatio;
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
     }
     window.addEventListener('resize', resize);
     resize();
-
-    document.querySelector('.hero').addEventListener('mousemove', e => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = (e.clientX - rect.left) / rect.width;
-      mouseY = (e.clientY - rect.top) / rect.height;
+    document.getElementById('concierge').addEventListener('mousemove', e => {
+      const r = canvas.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width;
+      my = (e.clientY - r.top) / r.height;
     });
-
-    function drawContours() {
-      const w = canvas.offsetWidth;
-      const h = canvas.offsetHeight;
+    (function draw() {
+      const w = canvas.offsetWidth, h = canvas.offsetHeight;
       ctx.clearRect(0, 0, w, h);
-      ctx.strokeStyle = 'rgba(15, 118, 90, 0.08)';
-      ctx.lineWidth = 1.15;
-
-      for (let i = 0; i < 9; i++) {
+      ctx.strokeStyle = 'rgba(110, 231, 183, 0.12)';
+      ctx.lineWidth = 1.2;
+      for (let i = 0; i < 8; i++) {
         ctx.beginPath();
-        const baseY = (h / 9) * i + 25;
-        for (let x = 0; x <= w; x += 18) {
-          const dist = Math.hypot(x / w - mouseX, baseY / h - mouseY);
-          const pull = Math.max(0, 1 - dist * 2.2) * 22;
-          const wave = Math.sin(x * 0.004 + tick + i * 0.55) * 18 + Math.cos(x * 0.009 - tick * 0.7) * 9;
-          const y = baseY + wave + pull;
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
+        const by = (h / 8) * i + 30;
+        for (let x = 0; x <= w; x += 20) {
+          const d = Math.hypot(x / w - mx, by / h - my);
+          const pull = Math.max(0, 1 - d * 2.3) * 26;
+          const y = by + Math.sin(x * 0.004 + t + i * 0.6) * 16 + pull;
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
         }
         ctx.stroke();
       }
-      tick += 0.008;
-      requestAnimationFrame(drawContours);
-    }
-    drawContours();
+      t += 0.01;
+      requestAnimationFrame(draw);
+    })();
   </script>
 </body>
 </html>
